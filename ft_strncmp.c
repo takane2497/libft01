@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 07:33:06 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/11 08:17:22 by takonaga         ###   ########.fr       */
+/*   Created: 2022/10/11 08:18:54 by takonaga          #+#    #+#             */
+/*   Updated: 2022/10/11 08:49:09 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s != '\0')
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
+	size_t	i;
+
+	if (n == 0 || (s1 == '\0' && s2 == '\0'))
+		return (0);
+	i = 0;
+	while (s1[i] != '\0' && s1[i] != '\0' && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
 // int main(void)
 // {
-// 	char a[] = "abcdefghijk";
-// 	int b = '\0';
-// 	printf("%s\n", strchr(a, b));
-// 	char c[] = "abcdefghigk";
-// 	int d = '\0';
-// 	printf("%s\n", ft_strchr(c, d));
+// 	printf("%d\n", ft_strncmp("114", "1235", 3));
+// 	printf("%d\n", strncmp("114", "1235", 3));
 // }
