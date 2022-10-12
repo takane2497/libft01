@@ -6,13 +6,40 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:32:56 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/11 21:35:55 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/12 20:52:57 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	converter(int n)
+{
+	if (n == 0)
+		return (0);
+	else if (n > 0)
+		return (1);
+	else
+		return (-1);
+}
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	size_t				i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;
+	i = 0;
+	while (i < n && str1[i] == str2[i])
+		++i;
+	return (converter(str1[i] - str2[i]));
 }
+
+// int main()
+// {
+//         printf("%d\n", ft_memcmp("abc\0def", "abc\0def", 7));
+//         printf("%d\n", ft_memcmp("abc\0def", "aBc\0def", 7));
+//         printf("%d\n", ft_memcmp("AcB", "abc\0d", 8));
+// 		printf("%d\n", memcmp("AcB", "abc\0d", 8));
+// }
