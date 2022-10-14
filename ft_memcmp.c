@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:32:56 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/12 20:52:57 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/15 02:52:18 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*str1;
 	const unsigned char	*str2;
 
+	i = 0;
 	str1 = (const unsigned char *)s1;
 	str2 = (const unsigned char *)s2;
-	i = 0;
-	while (i < n && str1[i] == str2[i])
+	if (s1 == NULL || s2 == NULL || n == 0)
+		return (0);
+	while (i < n - 1 && *(str1 + i) == *(str2 + i))
 		++i;
-	return (converter(str1[i] - str2[i]));
+	return (converter(*(str1 + i) - *(str2 + i)));
 }
 
 // int main()
