@@ -6,12 +6,11 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:14:40 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/16 05:14:01 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/16 07:01:59 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 static const char	*ft_symbol_flag(const char *nptr, int *symbol_flag)
 {
