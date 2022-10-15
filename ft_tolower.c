@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 06:37:08 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/08 18:46:44 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/16 04:13:13 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_tolower(int c)
 {
-	if (65 <= c && c <= 90)
-		return (c - 65 + 97);
+	if ('A' <= c && c <= 'Z')
+		return (c - 'A' + 'a');
 	return (c);
 }
 
